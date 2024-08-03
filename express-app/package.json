@@ -1,11 +1,26 @@
 {
   "name": "express-app",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon",
+    "build-and-start": "npm run build && npm start"
   },
   "author": "Muhammad Sharaf",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.1.0",
+    "@types/sequelize": "^4.28.20",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.5.4"
+  }
 }
