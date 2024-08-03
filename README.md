@@ -28,6 +28,7 @@ web application url: http://localhost:3001/
 
 ## Project Structure
 
+```
 Server (express-app)
 │   controllers
 │   models  
@@ -65,9 +66,11 @@ Mobile Application (React Native)
 |   └── SCREENS
 │
 └── theme
+```
 
 
 ## Interface
+```
 interface ApartmentDetails {
     id?: number;
     location: string;
@@ -78,6 +81,7 @@ interface ApartmentDetails {
     createdAt?: Date;
     updatedAt?: Date;
 }
+```
 
 ## Features
 - /admin/addApartment (add a new apartment)
