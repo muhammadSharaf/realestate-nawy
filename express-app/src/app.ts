@@ -1,4 +1,5 @@
 import express, {Express} from 'express';
+const cors = require('cors');
 import {json} from 'body-parser';
 import {Sequelize} from "sequelize";
 
@@ -8,6 +9,7 @@ import adminRoutes from "./routes/admin";
 
 const app: Express = express();
 
+app.use(cors());
 app.use(json());
 
 app.use('/admin', adminRoutes);
