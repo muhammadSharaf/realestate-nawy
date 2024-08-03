@@ -6,7 +6,7 @@ import Image from "next/image";
 const Apartments = async (props: any) => {
     const {apartmentId} = props.params;
 
-    const response = await fetch(`http://localhost:3000/apartments/${apartmentId}`);
+    const response = await fetch(`http://express:3000/apartments/${apartmentId}`);
     const apartment: ApartmentDetails = await response.json();
 
     return (<div className={"min-h-screen p-8"}>

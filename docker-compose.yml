@@ -11,11 +11,15 @@ services:
       - DB_PASSWORD=adminadmin
       - DB_NAME=realestate
     command: ["npm", "run", "dev"]
+    networks:
+      - app-network
 
   next-app:
     build: ./next-app
     ports:
       - "3001:3000"
+    networks:
+      - app-network
 
   # MySQL database
   database:
@@ -27,6 +31,12 @@ services:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+    networks:
+      - app-network
 
 volumes:
   db_data:
+
+networks:
+  app-network:
+    driver: bridge

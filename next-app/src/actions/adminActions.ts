@@ -21,7 +21,7 @@ export const onAddApartment = async (formData: FormData) => {
         baths,
     }
 
-    const res = await fetch('http://localhost:3000/admin/addApartment', {
+    const res = await fetch(`http://express:3000/admin/addApartment`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
