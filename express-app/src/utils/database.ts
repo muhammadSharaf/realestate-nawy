@@ -6,4 +6,11 @@ const sequelize = new Sequelize(process.env.DB_NAME!, process.env.DB_USER!, proc
     dialect: 'mysql',
 });
 
+// LOCAL
+// const sequelize = new Sequelize('realestate', 'root', 'adminadmin', {
+//     host: 'localhost',
+//     port: 3306,
+//     dialect: 'mysql',
+// });
+
 export default sequelize;
