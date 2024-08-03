@@ -12,6 +12,11 @@ services:
       - DB_NAME=realestate
     command: ["npm", "run", "dev"]
 
+  next-app:
+    build: ./next-app
+    ports:
+      - "3001:3000"
+
   # MySQL database
   database:
     image: mysql:8

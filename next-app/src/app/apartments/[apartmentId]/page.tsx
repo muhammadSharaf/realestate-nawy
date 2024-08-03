@@ -1,11 +1,9 @@
 import React from 'react';
 import ApartmentDetails from "@/types/Apartment.type";
-import {Params} from "next/dist/shared/lib/router/utils/route-matcher";
 import DEFAULT_APARTMENT from "../../../../public/images/apartment_placeholder.jpeg";
 import Image from "next/image";
 
-const Apartments: React.FC<Params> = async (props) => {
-
+const Apartments = async (props: any) => {
     const {apartmentId} = props.params;
 
     const response = await fetch(`http://localhost:3000/apartments/${apartmentId}`);
