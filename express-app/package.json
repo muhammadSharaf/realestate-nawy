@@ -4,8 +4,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "nodemon",
-    "build-and-start": "npm run build && npm start"
+    "dev": "nodemon --legacy-watch src/**/*.ts"
   },
   "author": "Muhammad Sharaf",
   "license": "ISC",
