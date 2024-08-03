@@ -5,14 +5,21 @@ import {redirect} from "next/navigation";
 import {revalidatePath} from "next/cache";
 
 export const onAddApartment = async (formData: FormData) => {
-    const apartment: ApartmentDetails = {
-        location: formData.get('location') as string,
-        totalPrice: parseInt(formData.get('totalPrice') as string),
-        beds: parseInt(formData.get('beds') as string),
-        baths: parseInt(formData.get('baths') as string),
+    const location = formData.get('location') as string;
+    const totalPrice = parseInt(formData.get('totalPrice') as string);
+    const beds = parseInt(formData.get('beds') as string);
+    const baths = parseInt(formData.get('baths') as string);
+
+    if (!location || isNaN(totalPrice) || isNaN(beds) || isNaN(baths)) {
+        return { message: 'Please provide valid inputs for all fields.' };
     }
 
-    //TODO validate input
+    const apartment: ApartmentDetails = {
+        location,
+        totalPrice,
+        beds,
+        baths,
+    }
 
     const res = await fetch('http://localhost:3000/admin/addApartment', {
         method: 'POST',
